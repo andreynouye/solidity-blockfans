@@ -1,0 +1,3 @@
+const contract = await ethers.getContractAt("PrizePool", "0xe3314d15fc547d36b0E28530d7dAA4190Caa204F");console.log(await contract.superTrunfo());
+gameCardContract.value.methods.buyCardPack().send({ from: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266});
+.help
