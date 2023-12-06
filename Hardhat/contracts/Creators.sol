@@ -60,9 +60,20 @@ contract Creators is Ownable, ICreators {
 
     function addCreator(
         address creatorAddress,
+        string memory name,
+        string memory description,
+        string memory location,
+        Creator.Rating rating,
         Creator.Status status
     ) public onlyOwner {
-        creators[creatorAddress] = Creator.Detail(status);
+        creators[creatorAddress] = Creator.Detail(
+            name,
+            description,
+            location,
+            rating,
+            status
+        );
+
         if (status == Creator.Status.Active) {
             creatorAddresses.push(creatorAddress);
         }
@@ -94,6 +105,10 @@ contract Creators is Ownable, ICreators {
 
     function getCreators() public view override returns (address[] memory) {
         return creatorAddresses;
+    }
+
+    function isCreator(address user) public view returns (bool) {
+        return creators[user].status == Creator.Status.Active;
     }
 
     function withdraw(

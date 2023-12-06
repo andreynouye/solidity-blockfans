@@ -52,15 +52,6 @@ const routes = [
         },
     },
     {
-        path: "/test",
-        name: "Test",
-        component: OwnedNFT,
-        meta: {
-            requiresWallet: true,
-            title: "Test",
-        },
-    },
-    {
         path: "/u/:username",
         name: "UserDetails",
         component: UserDetails,

@@ -1,5 +1,5 @@
 <template>
-    <AppHeader :web3="web3" :account="account" :connectWallet="connectWallet" :disconnectWallet="disconnectWallet" />
+    <AppHeader :web3="web3" :account="account" :isCreator="isCreator" :connectWallet="connectWallet" :disconnectWallet="disconnectWallet" />
     <router-view></router-view>
     <AppFooter ref="footer" />
 </template>
@@ -28,6 +28,8 @@ export default {
         const creatorsContract = ref(null);
         const creatorsNFTContract = ref(null);
         const footer = ref(null);
+
+        const isCreator = ref(false);
 
         const loadContracts = async () => {
             try {
@@ -61,6 +63,8 @@ export default {
                     if (web3.value && account.value) {
                         account.value = accounts[0];
                         await loadContracts();
+
+                        isCreator.value = await creatorsContract.value.methods.isCreator(account.value).call();
                     }
                 } catch (error) {
                     console.error(error);
@@ -100,6 +104,8 @@ export default {
             blockFansContract,
             creatorsContract,
             creatorsNFTContract,
+
+            isCreator,
 
             connectWallet,
             disconnectWallet,

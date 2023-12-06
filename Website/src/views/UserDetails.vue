@@ -3,7 +3,10 @@
         <div class="row justify-content-between">
             <div class="col-auto mr-auto">
                 <h1>User Details</h1>
-                <h2>{{ username }}</h2>
+                <ul>
+                    <li>Address: {{ username }}</li>
+                </ul>
+                <h2>NFTs</h2>
                 <ul v-if="nfts.length > 0">
                     <li v-for="nft in nfts" :key="nft.sourceId">
                         NFT: {{ nft }} ID: {{ nft.sourceId }}

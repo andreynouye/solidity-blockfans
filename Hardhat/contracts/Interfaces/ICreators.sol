@@ -10,4 +10,6 @@ interface ICreators {
     );
 
     function getCreators() external view returns (address[] memory);
+
+    function isCreator(address user) external view returns (bool);
 }

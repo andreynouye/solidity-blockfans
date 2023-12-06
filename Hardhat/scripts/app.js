@@ -40,15 +40,15 @@ async function main() {
     console.log("creatorsNFT.setCreators: ", creators.address);
 
     // Distribuir tokens para os endereços selecionados
-    const [account1, account2, account3, account4] = await ethers.getSigners();
-    const holders = [account1.address, account2.address, account3.address, account4.address];
+    const [account1, account2, account3] = await ethers.getSigners();
+    const holders = [account1.address, account2.address, account3.address];
 
     const totalTokens = ethers.utils.parseUnits("100000");
     for (let i = 0; i < holders.length; i++) {
         await blockFans.transfer(holders[i], totalTokens);
 
         // mock creators list
-        await creators.addCreator(holders[i], 2);
+        await creators.addCreator(holders[i], "Creator " + [i], "Description", "Brazil", 4, 2);
         console.log("creators.addCreator: ", holders[i] + " - Creator.Status.Active");
     }
 

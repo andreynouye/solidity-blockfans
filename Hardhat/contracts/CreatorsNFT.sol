@@ -198,6 +198,8 @@ contract CreatorsNFT is
         uint256 units,
         NFTSource.MediaType mediaType
     ) public override {
+        require(creatorsContract.isCreator(msg.sender), "Not a creator");
+
         uint256 newSourceId = nextSourceId++;
 
         NFTSource.Detail memory newSource = NFTSource.Detail(

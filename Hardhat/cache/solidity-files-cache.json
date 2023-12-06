@@ -1145,8 +1145,8 @@
       ]
     },
     "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Interfaces\\ICreators.sol": {
-      "lastModificationDate": 1701836069266,
-      "contentHash": "dbf3b06cfbd8445dbeffb45e6c7c27f7",
+      "lastModificationDate": 1701863353414,
+      "contentHash": "110e1c6b60b1e199c9bd25149a353743",
       "sourceName": "contracts/Interfaces/ICreators.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -1235,8 +1235,8 @@
       ]
     },
     "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\CreatorsNFT.sol": {
-      "lastModificationDate": 1701834567180,
-      "contentHash": "c050aac1078d6307a8ed16057804d866",
+      "lastModificationDate": 1701863366800,
+      "contentHash": "6d6f28537795d135e8ee3f480349e496",
       "sourceName": "contracts/CreatorsNFT.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -1341,8 +1341,8 @@
       ]
     },
     "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Structures\\Creator.sol": {
-      "lastModificationDate": 1701696418228,
-      "contentHash": "8f43e094424a51788f0d900410cd609a",
+      "lastModificationDate": 1701862808438,
+      "contentHash": "0045e8ae076fce9ca3a477dd9795dba7",
       "sourceName": "contracts/Structures/Creator.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -1475,8 +1475,8 @@
       ]
     },
     "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Creators.sol": {
-      "lastModificationDate": 1701836073027,
-      "contentHash": "068fd3914f5582e707a8809f1aff1b62",
+      "lastModificationDate": 1701863340915,
+      "contentHash": "5d2b930108757d6631f34f2352be1779",
       "sourceName": "contracts/Creators.sol",
       "solcConfig": {
         "version": "0.8.19",

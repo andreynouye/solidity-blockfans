@@ -27,10 +27,10 @@
 
             <div class="row justify-content-between">
                 <div v-if="web3" class="secondaryMenu d-none d-md-flex">
-                    <router-link to="/create">
+                    <router-link to="/create" v-if="isCreator">
                         <button>Create</button>
                     </router-link>
-                    <router-link to="/list">
+                    <router-link to="/list" v-if="isCreator">
                         <button>List NFTs</button>
                     </router-link>
                     <router-link to="/owned">
@@ -48,7 +48,7 @@
 <script>
 export default {
     name: "AppHeader",
-    props: ["web3", "account", "connectWallet", "disconnectWallet"],
+    props: ["web3", "account", "isCreator", "connectWallet", "disconnectWallet"],
     methods: {
         handleDisconnect() {
             this.disconnectWallet();
