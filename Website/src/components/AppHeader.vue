@@ -30,6 +30,12 @@
                     <router-link to="/create">
                         <button>Create</button>
                     </router-link>
+                    <router-link to="/list">
+                        <button>List NFTs</button>
+                    </router-link>
+                    <router-link to="/owned">
+                        <button>Owned NFTs</button>
+                    </router-link>
                 </div>
             </div>
         </div>

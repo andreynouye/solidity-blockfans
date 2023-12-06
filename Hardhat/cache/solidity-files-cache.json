@@ -1100,8 +1100,8 @@
       ]
     },
     "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\CreatorsNFT.sol": {
-      "lastModificationDate": 1701785155886,
-      "contentHash": "a86db7be0b162adb3e536624f48c6055",
+      "lastModificationDate": 1701831953793,
+      "contentHash": "667ec05f2febccc8ae63f91f8a1c457f",
       "sourceName": "contracts/CreatorsNFT.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -1136,6 +1136,7 @@
         }
       },
       "imports": [
+        "hardhat/console.sol",
         "@openzeppelin/contracts/token/ERC721/ERC721.sol",
         "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
         "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
@@ -1156,8 +1157,8 @@
       ]
     },
     "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Interfaces\\ICreatorsNFT.sol": {
-      "lastModificationDate": 1701785234996,
-      "contentHash": "b2b9d2a70c4f3966ce2702ef92732c01",
+      "lastModificationDate": 1701832283838,
+      "contentHash": "d6c8ce622dbdb9fd457912f6fd2e7458",
       "sourceName": "contracts/Interfaces/ICreatorsNFT.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -1193,6 +1194,7 @@
       },
       "imports": [
         "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+        "@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
         "../Structures/NFT.sol",
         "../Structures/NFTSource.sol"
       ],
@@ -1201,140 +1203,6 @@
       ],
       "artifacts": [
         "ICreatorsNFT"
-      ]
-    },
-    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Structures\\Creator.sol": {
-      "lastModificationDate": 1701696418228,
-      "contentHash": "8f43e094424a51788f0d900410cd609a",
-      "sourceName": "contracts/Structures/Creator.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.19"
-      ],
-      "artifacts": [
-        "Creator"
-      ]
-    },
-    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Structures\\NFT.sol": {
-      "lastModificationDate": 1701713612968,
-      "contentHash": "9b7b3fb73b2d7f3696f2bb4abe162c7d",
-      "sourceName": "contracts/Structures/NFT.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./NFTSource.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.19"
-      ],
-      "artifacts": [
-        "NFT"
-      ]
-    },
-    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Structures\\NFTSource.sol": {
-      "lastModificationDate": 1701782906964,
-      "contentHash": "a61df8f8444dba7a0c54c0d71d6ec582",
-      "sourceName": "contracts/Structures/NFTSource.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.19"
-      ],
-      "artifacts": [
-        "NFTSource"
       ]
     },
     "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\utils\\Base64.sol": {
@@ -1476,6 +1344,184 @@
       ],
       "artifacts": [
         "Creators"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Structures\\Creator.sol": {
+      "lastModificationDate": 1701696418228,
+      "contentHash": "8f43e094424a51788f0d900410cd609a",
+      "sourceName": "contracts/Structures/Creator.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "Creator"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Structures\\NFT.sol": {
+      "lastModificationDate": 1701713612968,
+      "contentHash": "9b7b3fb73b2d7f3696f2bb4abe162c7d",
+      "sourceName": "contracts/Structures/NFT.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./NFTSource.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "NFT"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Structures\\NFTSource.sol": {
+      "lastModificationDate": 1701830759400,
+      "contentHash": "cf1507fc2a061400931f65c6d3688a69",
+      "sourceName": "contracts/Structures/NFTSource.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "NFTSource"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\hardhat\\console.sol": {
+      "lastModificationDate": 1691585598990,
+      "contentHash": "4ff3cd2f6272c9a6516e9ee4f2b967d3",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">= 0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
       ]
     }
   }

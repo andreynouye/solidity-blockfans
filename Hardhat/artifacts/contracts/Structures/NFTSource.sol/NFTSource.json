@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "NFTSource",
+  "sourceName": "contracts/Structures/NFTSource.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea26469706673582212200aac9f18c38c1b1a2cb325abe51551d0828c71b50165ba13136d714d7e6b3d8864736f6c63430008130033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212200aac9f18c38c1b1a2cb325abe51551d0828c71b50165ba13136d714d7e6b3d8864736f6c63430008130033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

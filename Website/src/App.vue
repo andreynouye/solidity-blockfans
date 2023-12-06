@@ -19,9 +19,9 @@ export default {
         AppFooter,
     },
     setup() {
-        const BlockfansAddress = "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9";
-        const CreatorsAddress = "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9";
-        const CreatorsNFTAddress = "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707";
+        const BlockfansAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+        const CreatorsAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
+        const CreatorsNFTAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
 
         const web3 = ref(null);
         const blockFansContract = ref(null);
@@ -31,23 +31,21 @@ export default {
 
         const loadContracts = async () => {
             try {
-                const responseBlockfans = await fetch("/contracts/IBlockfans.sol/IBlockfans.json");
+                const responseBlockfans = await fetch("/contracts/Blockfans.sol/Blockfans.json");
                 const contractBlockfans = await responseBlockfans.json();
                 const BlockfansABI = contractBlockfans.abi;
 
-                const responseCreators = await fetch("/contracts/ICreators.sol/ICreators.json");
+                const responseCreators = await fetch("/contracts/Creators.sol/Creators.json");
                 const contractCreators = await responseCreators.json();
                 const CreatorsABI = contractCreators.abi;
 
-                const responseCreatorsNFT = await fetch("/contracts/ICreatorsNFT.sol/ICreatorsNFT.json");
+                const responseCreatorsNFT = await fetch("/contracts/CreatorsNFT.sol/CreatorsNFT.json");
                 const contractCreatorsNFT = await responseCreatorsNFT.json();
                 const CreatorsNFTABI = contractCreatorsNFT.abi;
 
                 blockFansContract.value = new web3.value.eth.Contract(BlockfansABI, BlockfansAddress);
                 creatorsContract.value = new web3.value.eth.Contract(CreatorsABI, CreatorsAddress);
                 creatorsNFTContract.value = new web3.value.eth.Contract(CreatorsNFTABI, CreatorsNFTAddress);
-
-                console.log("creatorsNFTContract.value: ", creatorsNFTContract.value);
             } catch (error) {
                 console.error(error);
             }

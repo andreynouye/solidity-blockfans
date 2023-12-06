@@ -3,6 +3,8 @@ import { isWalletConnected } from "./store.js";
 
 import HomePage from "./views/HomePage.vue";
 import CreateNFT from "./views/CreateNFT.vue";
+import ListNFT from "./views/ListNFT.vue";
+import OwnedNFT from "./views/OwnedNFT.vue";
 
 const routes = [
     {
@@ -17,7 +19,25 @@ const routes = [
         component: CreateNFT,
         meta: {
             requiresWallet: true,
-            title: "Create",
+            title: "Create NFT",
+        },
+    },
+    {
+        path: "/list",
+        name: "List",
+        component: ListNFT,
+        meta: {
+            requiresWallet: true,
+            title: "List NFTs",
+        },
+    },
+    {
+        path: "/owned",
+        name: "Owned",
+        component: OwnedNFT,
+        meta: {
+            requiresWallet: true,
+            title: "Owned NFTs",
         },
     },
 ];

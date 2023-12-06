@@ -20,7 +20,7 @@ library NFTSource {
     }
 
     struct Detail {
-        uint256 modelId;
+        uint256 sourceId;
         address creator;
         string name;
         string description;

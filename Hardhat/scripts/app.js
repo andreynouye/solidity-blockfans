@@ -23,11 +23,33 @@ async function main() {
     await creatorsNFT.deployed();
     console.log("CreatorsNFT deployed to:", creatorsNFT.address);
 
+    // configuration
+    await blockFans.setCompanyAddress(deployer.address);
+    console.log("blockFans.setCompanyAddress: ", deployer.address);
+
+    await creatorsNFT.setBlockFans(blockFans.address);
+    console.log("creatorsNFT.setBlockFans: ", blockFans.address);
+
+    await creatorsNFT.setCreators(creators.address);
+    console.log("creatorsNFT.setCreators: ", creators.address);
+
+    // Distribuir tokens para os endereços selecionados
+    const [account1, account2, account3, account4] = await ethers.getSigners();
+    const holders = [account1.address, account2.address, account3.address, account4.address];
+
+    const totalTokens = ethers.utils.parseUnits("100000");
+    for (let i = 0; i < holders.length; i++) {
+        await blockFans.transfer(holders[i], totalTokens);
+    }
+
+    console.log("Token airdrop");
+    console.log("Selected addresses:", holders);
+
     // Shortcuts
     console.log("Start ENV:");
     console.log(`        const BlockfansAddress = '${blockFans.address}';`);
     console.log(`        const CreatorsAddress = '${creators.address}';`);
-    console.log(`        const creatorsNFTAddress = '${creatorsNFT.address}';`);
+    console.log(`        const CreatorsNFTAddress = '${creatorsNFT.address}';`);
     console.log("End ENV.");
 }
 

@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.19;
 
+import "hardhat/console.sol";
+
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
@@ -28,9 +30,9 @@ contract CreatorsNFT is
     uint256 public nextSourceId = 1;
     uint256 public nextNFTId = 1;
 
-    mapping(address => Creator.Detail) private creators;
     mapping(uint256 => NFTSource.Detail) private nftSources;
     mapping(address => uint256[]) private creatorNFTs;
+
     mapping(uint256 => NFT.Detail) public nfts;
 
     constructor() ERC721("BlockfansNFT", "BFN") {
@@ -147,7 +149,7 @@ contract CreatorsNFT is
 
         nfts[newNFTId] = newCard;
 
-        _mint(address(this), newNFTId);
+        _mint(msg.sender, newNFTId);
         _setTokenURI(
             newNFTId,
             _formatTokenURI(
@@ -161,6 +163,20 @@ contract CreatorsNFT is
         );
 
         return newNFTId;
+    }
+
+    function _removeNFTSourceIdFromCreator(
+        address creator,
+        uint256 sourceId
+    ) private {
+        uint256 length = creatorNFTs[creator].length;
+        for (uint i = 0; i < length; i++) {
+            if (creatorNFTs[creator][i] == sourceId) {
+                creatorNFTs[creator][i] = creatorNFTs[creator][length - 1];
+                creatorNFTs[creator].pop();
+                break;
+            }
+        }
     }
 
     function setBlockFans(address blockFans) external onlyOwner {
@@ -206,8 +222,34 @@ contract CreatorsNFT is
         return creatorNFTs[creator];
     }
 
+    function getNFTDetailsByCreator(
+        address creator
+    ) public view override returns (NFTSource.Detail[] memory) {
+        uint256[] memory nftIds = creatorNFTs[creator];
+        NFTSource.Detail[] memory nftDetails = new NFTSource.Detail[](
+            nftIds.length
+        );
+
+        for (uint i = 0; i < nftIds.length; i++) {
+            nftDetails[i] = nftSources[nftIds[i]];
+        }
+
+        return nftDetails;
+    }
+
+    function deleteNFTSource(uint256 sourceId) public override {
+        require(nftSources[sourceId].creator == msg.sender, "Not the creator");
+
+        delete nftSources[sourceId];
+
+        _removeNFTSourceIdFromCreator(msg.sender, sourceId);
+    }
+
     function buyNFT(uint256 sourceId) external override {
         NFTSource.Detail memory source = nftSources[sourceId];
+
+        console.log("price: ", source.price);
+        console.log("blockFansAddress: ", blockFansAddress);
 
         require(
             blockFansContract.allowance(msg.sender, address(this)) >=
@@ -224,8 +266,6 @@ contract CreatorsNFT is
         );
 
         uint256 newCardId = _mintNFT(sourceId);
-
-        _transfer(address(this), msg.sender, newCardId);
 
         emit NFTTransferred(msg.sender, newCardId);
     }
