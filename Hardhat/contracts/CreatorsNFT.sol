@@ -32,6 +32,7 @@ contract CreatorsNFT is
 
     mapping(uint256 => NFTSource.Detail) private nftSources;
     mapping(address => uint256[]) private creatorNFTs;
+    mapping(address => uint256[]) private publicNFTs;
 
     mapping(uint256 => NFT.Detail) public nfts;
     mapping(uint256 => uint256) private soldUnitsPerSource;
@@ -180,6 +181,20 @@ contract CreatorsNFT is
         }
     }
 
+    function _removeNFTSourceIdFromPublic(
+        address creator,
+        uint256 sourceId
+    ) private {
+        uint256 length = publicNFTs[creator].length;
+        for (uint i = 0; i < length; i++) {
+            if (publicNFTs[creator][i] == sourceId) {
+                publicNFTs[creator][i] = publicNFTs[creator][length - 1];
+                publicNFTs[creator].pop();
+                break;
+            }
+        }
+    }
+
     function setBlockFans(address blockFans) external onlyOwner {
         blockFansAddress = payable(blockFans);
         blockFansContract = IBlockfans(blockFans);
@@ -217,18 +232,36 @@ contract CreatorsNFT is
 
         nftSources[newSourceId] = newSource;
         creatorNFTs[msg.sender].push(newSourceId);
+        publicNFTs[msg.sender].push(newSourceId);
     }
 
-    function getNFTsByCreator(
+    function getNFTsByCreator() public view override returns (uint256[] memory) {
+        return creatorNFTs[msg.sender];
+    }
+
+    function getNFTDetailsByCreator() public view override returns (NFTSource.Detail[] memory) {
+        uint256[] memory nftIds = creatorNFTs[msg.sender];
+        NFTSource.Detail[] memory nftDetails = new NFTSource.Detail[](
+            nftIds.length
+        );
+
+        for (uint i = 0; i < nftIds.length; i++) {
+            nftDetails[i] = nftSources[nftIds[i]];
+        }
+
+        return nftDetails;
+    }
+
+    function getPublicNFTsByCreator(
         address creator
     ) public view override returns (uint256[] memory) {
-        return creatorNFTs[creator];
+        return publicNFTs[creator];
     }
 
-    function getNFTDetailsByCreator(
+    function getPublicNFTDetailsByCreator(
         address creator
     ) public view override returns (NFTSource.Detail[] memory) {
-        uint256[] memory nftIds = creatorNFTs[creator];
+        uint256[] memory nftIds = publicNFTs[creator];
         NFTSource.Detail[] memory nftDetails = new NFTSource.Detail[](
             nftIds.length
         );
@@ -248,16 +281,37 @@ contract CreatorsNFT is
 
     function deleteNFTSource(uint256 sourceId) public override {
         require(nftSources[sourceId].creator == msg.sender, "Not the creator");
+        require(nftSources[sourceId].status == NFTSource.Status.Pending || nftSources[sourceId].status == NFTSource.Status.Available, "Not Available");
+
+        nftSources[sourceId].status = NFTSource.Status.Trashed;
+
+        _removeNFTSourceIdFromPublic(msg.sender, sourceId);
+    }
+    
+    function permanentDeleteNFTSource(uint256 sourceId) public override {
+        require(nftSources[sourceId].creator == msg.sender, "Not the creator");
+        require(nftSources[sourceId].status == NFTSource.Status.Trashed, "Not Available");
+
 
         delete nftSources[sourceId];
 
         _removeNFTSourceIdFromCreator(msg.sender, sourceId);
+        _removeNFTSourceIdFromPublic(msg.sender, sourceId);
+    }
+
+    function restoreNFTSource(uint256 sourceId) public override {
+        require(nftSources[sourceId].creator == msg.sender, "Not the creator");
+
+        nftSources[sourceId].status = NFTSource.Status.Available;
+
+        publicNFTs[msg.sender].push(sourceId);
     }
 
     function buyNFT(uint256 sourceId) external override {
-        NFTSource.Detail memory source = nftSources[sourceId];
+        NFTSource.Detail storage source = nftSources[sourceId];
 
-        require(soldUnitsPerSource[sourceId] < source.units, "Max units sold");
+        require(soldUnitsPerSource[sourceId] < source.units, "Sold Out");
+        require(source.status == NFTSource.Status.Available, "Not Available");
 
         require(
             blockFansContract.allowance(msg.sender, address(this)) >=
@@ -276,6 +330,10 @@ contract CreatorsNFT is
         uint256 newCardId = _mintNFT(sourceId);
 
         soldUnitsPerSource[sourceId]++;
+
+        if (soldUnitsPerSource[sourceId] >= source.units) {
+            source.status = NFTSource.Status.SoldOut;
+        }
 
         emit NFTTransferred(msg.sender, newCardId);
     }

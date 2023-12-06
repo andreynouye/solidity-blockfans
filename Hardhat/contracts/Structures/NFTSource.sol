@@ -14,7 +14,8 @@ library NFTSource {
     enum Status {
         Pending,
         Available,
-        Unavailable,
+        SoldOut,
+        Trashed,
         Blocked,
         Banned
     }

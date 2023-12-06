@@ -74,7 +74,7 @@ export default {
         const created = async () => {
             try {
                 loading.value = true;
-                const results = await creatorsNFTContract.value.methods.getNFTDetailsByCreator(username.value).call();
+                const results = await creatorsNFTContract.value.methods.getPublicNFTDetailsByCreator(username.value).call();
 
                 console.log("results:", results);
                 const nftsWithSales = await Promise.all(

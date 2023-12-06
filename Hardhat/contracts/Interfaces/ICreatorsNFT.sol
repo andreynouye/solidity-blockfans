@@ -25,11 +25,15 @@ interface ICreatorsNFT is IERC721 {
         NFTSource.MediaType mediaType
     ) external;
 
-    function getNFTsByCreator(
-        address creator
-    ) external view returns (uint256[] memory);
+    function getNFTsByCreator() external view returns (uint256[] memory);
 
     function getNFTDetailsByCreator(
+        address creator
+    ) external view returns (NFTSource.Detail[] memory);
+
+    function getPublicNFTsByCreator() external view returns (uint256[] memory);
+
+    function getPublicNFTDetailsByCreator(
         address creator
     ) external view returns (NFTSource.Detail[] memory);
 
@@ -38,6 +42,10 @@ interface ICreatorsNFT is IERC721 {
     ) external view returns (uint256);
 
     function deleteNFTSource(uint256 sourceId) external;
+
+    function permanentDeleteNFTSource(uint256 sourceId) external;
+
+    function restoreNFTSource(uint256 sourceId) external;
 
     function buyNFT(uint256 modelId) external;
 }

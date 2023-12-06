@@ -6,7 +6,9 @@
                 <ul v-if="nfts.length > 0">
                     <li v-for="nft in nfts" :key="nft.sourceId">
                         NFT: {{ nft }} ID: {{ nft.sourceId }}
-                        <button :id="'remove-' + nft.sourceId" @click="remove(nft.sourceId)">Remove</button>
+                        <button v-if="nft.status == 0 || nft.status == 1" :id="'remove-' + nft.sourceId" @click="remove(nft.sourceId)">Remove</button>
+                        <button v-if="nft.status == 3" :id="'restore-' + nft.sourceId" @click="restore(nft.sourceId)">Restore</button>
+                        <button v-if="nft.status == 3" :id="'permanentRemove-' + nft.sourceId" @click="permanentRemove(nft.sourceId)">Permanent Remove</button>
                     </li>
                 </ul>
             </div>
@@ -31,19 +33,20 @@ export default {
         const created = async () => {
             try {
                 loading.value = true;
-                const results = await creatorsNFTContract.value.methods.getNFTDetailsByCreator(account.value).call();
+                const results = await creatorsNFTContract.value.methods.getNFTDetailsByCreator().send({ from: account.value });
 
-                console.log("results:", results);
-                const nftsWithSales = await Promise.all(
-                    results.map(async (nft) => {
-                        console.log("nft:", nft);
+                const nftsWithSales = [];
+                for (const nft of results) {
+                    try {
                         const salesCount = await creatorsNFTContract.value.methods.getSoldUnitsPerSource(nft.sourceId).call();
-                        return { ...nft, salesCount };
-                    })
-                );
-                console.log("nftsWithSales:", nftsWithSales);
+                        nftsWithSales.push({ ...nft, salesCount });
+                    } catch (error) {
+                        console.error("Error with NFT:", nft, error);
+                    }
+                }
 
-                nfts.value = nftsWithSales;
+                nfts.value = nftsWithSales.sort((a, b) => b.sourceId - a.sourceId);
+
             } catch (error) {
                 console.error(error);
             } finally {
@@ -54,6 +57,26 @@ export default {
         const remove = async (sourceId) => {
             try {
                 await creatorsNFTContract.value.methods.deleteNFTSource(sourceId).send({ from: account.value });
+            } catch (error) {
+                console.error(error);
+            } finally {
+                await created();
+            }
+        };
+
+        const permanentRemove = async (sourceId) => {
+            try {
+                await creatorsNFTContract.value.methods.permanentDeleteNFTSource(sourceId).send({ from: account.value });
+            } catch (error) {
+                console.error(error);
+            } finally {
+                await created();
+            }
+        };
+
+        const restore = async (sourceId) => {
+            try {
+                await creatorsNFTContract.value.methods.restoreNFTSource(sourceId).send({ from: account.value });
             } catch (error) {
                 console.error(error);
             } finally {
@@ -76,6 +99,8 @@ export default {
 
             created,
             remove,
+            permanentRemove,
+            restore
         };
     },
 };
