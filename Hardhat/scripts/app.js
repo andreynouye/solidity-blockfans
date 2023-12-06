@@ -27,6 +27,12 @@ async function main() {
     await blockFans.setCompanyAddress(deployer.address);
     console.log("blockFans.setCompanyAddress: ", deployer.address);
 
+    await creators.setBlockFans(blockFans.address);
+    console.log("creators.setBlockFans: ", blockFans.address);
+
+    await creators.setCreatorsNFT(creatorsNFT.address);
+    console.log("creators.setCreatorsNFT: ", creatorsNFT.address);
+
     await creatorsNFT.setBlockFans(blockFans.address);
     console.log("creatorsNFT.setBlockFans: ", blockFans.address);
 
@@ -40,6 +46,10 @@ async function main() {
     const totalTokens = ethers.utils.parseUnits("100000");
     for (let i = 0; i < holders.length; i++) {
         await blockFans.transfer(holders[i], totalTokens);
+
+        // mock creators list
+        await creators.addCreator(holders[i], 2);
+        console.log("creators.addCreator: ", holders[i] + " - Creator.Status.Active");
     }
 
     console.log("Token airdrop");

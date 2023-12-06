@@ -11,7 +11,9 @@ contract Creators is Ownable, ICreators {
     IBlockfans private blockFansContract;
     ICreatorsNFT private creatorsNFTContract;
 
-    mapping(address => Creator.Detail) internal creators;
+    address[] private creatorAddresses;
+
+    mapping(address => Creator.Detail) private creators;
 
     constructor() {
         blockFansContract = IBlockfans(address(0));
@@ -26,6 +28,28 @@ contract Creators is Ownable, ICreators {
         emit Received(msg.sender, msg.value);
     }
 
+    function _isCreatorAddressPresent(
+        address creatorAddress
+    ) private view returns (bool) {
+        for (uint i = 0; i < creatorAddresses.length; i++) {
+            if (creatorAddresses[i] == creatorAddress) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function _removeCreatorAddress(address creatorAddress) private {
+        uint256 length = creatorAddresses.length;
+        for (uint256 i = 0; i < length; i++) {
+            if (creatorAddresses[i] == creatorAddress) {
+                creatorAddresses[i] = creatorAddresses[length - 1];
+                creatorAddresses.pop();
+                break;
+            }
+        }
+    }
+
     function setBlockFans(address blockFansAddress) external onlyOwner {
         blockFansContract = IBlockfans(blockFansAddress);
     }
@@ -34,23 +58,16 @@ contract Creators is Ownable, ICreators {
         creatorsNFTContract = ICreatorsNFT(creatorsNFTAddress);
     }
 
-    /**
-     * @dev Função para adicionar um novo criador.
-     * @param creatorAddress Endereço do criador a ser adicionado.
-     * @param status O status inicial do criador.
-     */
     function addCreator(
         address creatorAddress,
         Creator.Status status
     ) public onlyOwner {
         creators[creatorAddress] = Creator.Detail(status);
+        if (status == Creator.Status.Active) {
+            creatorAddresses.push(creatorAddress);
+        }
     }
 
-    /**
-     * @dev Função para alterar o status de um criador existente.
-     * @param creatorAddress Endereço do criador cujo status será alterado.
-     * @param newStatus O novo status para o criador.
-     */
     function changeCreatorStatus(
         address creatorAddress,
         Creator.Status newStatus
@@ -59,7 +76,24 @@ contract Creators is Ownable, ICreators {
             creators[creatorAddress].status != Creator.Status(0),
             "Creator does not exist"
         );
+
+        if (
+            newStatus == Creator.Status.Active &&
+            !_isCreatorAddressPresent(creatorAddress)
+        ) {
+            creatorAddresses.push(creatorAddress);
+        } else if (
+            newStatus != Creator.Status.Active &&
+            _isCreatorAddressPresent(creatorAddress)
+        ) {
+            _removeCreatorAddress(creatorAddress);
+        }
+
         creators[creatorAddress].status = newStatus;
+    }
+
+    function getCreators() public view override returns (address[] memory) {
+        return creatorAddresses;
     }
 
     function withdraw(

@@ -46,6 +46,19 @@
       ],
       "name": "Recovered",
       "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "getCreators",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
   "bytecode": "0x",

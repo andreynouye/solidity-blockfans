@@ -34,6 +34,7 @@ contract CreatorsNFT is
     mapping(address => uint256[]) private creatorNFTs;
 
     mapping(uint256 => NFT.Detail) public nfts;
+    mapping(uint256 => uint256) private soldUnitsPerSource;
 
     constructor() ERC721("BlockfansNFT", "BFN") {
         blockFansAddress = payable(address(0));
@@ -237,6 +238,12 @@ contract CreatorsNFT is
         return nftDetails;
     }
 
+    function getSoldUnitsPerSource(
+        uint256 tokenId
+    ) public view override returns (uint256) {
+        return soldUnitsPerSource[tokenId];
+    }
+
     function deleteNFTSource(uint256 sourceId) public override {
         require(nftSources[sourceId].creator == msg.sender, "Not the creator");
 
@@ -248,8 +255,7 @@ contract CreatorsNFT is
     function buyNFT(uint256 sourceId) external override {
         NFTSource.Detail memory source = nftSources[sourceId];
 
-        console.log("price: ", source.price);
-        console.log("blockFansAddress: ", blockFansAddress);
+        require(soldUnitsPerSource[sourceId] < source.units, "Max units sold");
 
         require(
             blockFansContract.allowance(msg.sender, address(this)) >=
@@ -266,6 +272,8 @@ contract CreatorsNFT is
         );
 
         uint256 newCardId = _mintNFT(sourceId);
+
+        soldUnitsPerSource[sourceId]++;
 
         emit NFTTransferred(msg.sender, newCardId);
     }

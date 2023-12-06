@@ -8,4 +8,6 @@ interface ICreators {
         address tokenAddress,
         uint256 amountOrTokenId
     );
+
+    function getCreators() external view returns (address[] memory);
 }

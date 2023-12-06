@@ -5,6 +5,8 @@ import HomePage from "./views/HomePage.vue";
 import CreateNFT from "./views/CreateNFT.vue";
 import ListNFT from "./views/ListNFT.vue";
 import OwnedNFT from "./views/OwnedNFT.vue";
+import CreatorsList from "./views/CreatorsList.vue";
+import UserDetails from "./views/UserDetails.vue";
 
 const routes = [
     {
@@ -40,6 +42,33 @@ const routes = [
             title: "Owned NFTs",
         },
     },
+    {
+        path: "/creators",
+        name: "Creators",
+        component: CreatorsList,
+        meta: {
+            requiresWallet: true,
+            title: "Creators",
+        },
+    },
+    {
+        path: "/test",
+        name: "Test",
+        component: OwnedNFT,
+        meta: {
+            requiresWallet: true,
+            title: "Test",
+        },
+    },
+    {
+        path: "/u/:username",
+        name: "UserDetails",
+        component: UserDetails,
+        meta: {
+            requiresWallet: true,
+            title: "User Details",
+        },
+    },
 ];
 
 const router = createRouter({
@@ -56,7 +85,11 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach((to) => {
-    document.title = to.meta.title || "BitMobster";
+    if (to.name === "UserDetails" && to.params.username) {
+        document.title = `${to.params.username} - User Details | BitMobster`;
+    } else {
+        document.title = to.meta.title || "BitMobster";
+    }
 });
 
 export default router;

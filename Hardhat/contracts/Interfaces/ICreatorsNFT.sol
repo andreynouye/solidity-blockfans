@@ -33,6 +33,10 @@ interface ICreatorsNFT is IERC721 {
         address creator
     ) external view returns (NFTSource.Detail[] memory);
 
+    function getSoldUnitsPerSource(
+        uint256 tokenId
+    ) external view returns (uint256);
+
     function deleteNFTSource(uint256 sourceId) external;
 
     function buyNFT(uint256 modelId) external;

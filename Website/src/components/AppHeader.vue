@@ -36,6 +36,9 @@
                     <router-link to="/owned">
                         <button>Owned NFTs</button>
                     </router-link>
+                    <router-link to="/creators">
+                        <button>List Creators</button>
+                    </router-link>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-auto mr-auto">
-                <h1 id="home-page">Create NFT</h1>
+                <h1>Create NFT</h1>
 
                 <form @submit.prevent="createNFT">
                     <div>

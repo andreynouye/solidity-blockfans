@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-auto mr-auto">
-                <h1 id="home-page">Owned NFTs</h1>
+                <h1>Owned NFTs</h1>
                 <ul v-if="nfts.length > 0">
                     <li v-for="nft in nfts" :key="nft.modelId">NFT: {{ nft }}</li>
                 </ul>
@@ -39,6 +39,8 @@ export default {
                     const nftDetail = await creatorsNFTContract.value.methods.nfts(tokenId).call();
                     nfts.value.push({ tokenId, ...nftDetail });
                 }
+
+                console.log("nfts.value: ", nfts.value);
             } catch (error) {
                 console.error(error);
             } finally {
