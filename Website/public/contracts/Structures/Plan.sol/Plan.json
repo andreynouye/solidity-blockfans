@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Plan",
+  "sourceName": "contracts/Structures/Plan.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea2646970667358221220d419e44eb19817e9ba1f143585f401a9be2f8c1df308c4c6ec61efadab99dc8b64736f6c63430008130033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220d419e44eb19817e9ba1f143585f401a9be2f8c1df308c4c6ec61efadab99dc8b64736f6c63430008130033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

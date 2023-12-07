@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Subscription",
+  "sourceName": "contracts/Structures/Subscription.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea26469706673582212208ac9556e4f5c0e923e7e4554e8d46c304960412304d52a1ece9e667eb8a8311d64736f6c63430008130033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212208ac9556e4f5c0e923e7e4554e8d46c304960412304d52a1ece9e667eb8a8311d64736f6c63430008130033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

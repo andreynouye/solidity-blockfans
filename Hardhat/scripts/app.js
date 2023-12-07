@@ -23,6 +23,12 @@ async function main() {
     await creatorsNFT.deployed();
     console.log("CreatorsNFT deployed to:", creatorsNFT.address);
 
+    // deploy CreatorsPlans
+    CreatorsPlans = await ethers.getContractFactory("CreatorsPlans");
+    creatorsPlans = await CreatorsPlans.deploy();
+    await creatorsPlans.deployed();
+    console.log("CreatorsPlans deployed to:", creatorsPlans.address);
+
     // configuration
     await blockFans.setCompanyAddress(deployer.address);
     console.log("blockFans.setCompanyAddress: ", deployer.address);
@@ -38,6 +44,12 @@ async function main() {
 
     await creatorsNFT.setCreators(creators.address);
     console.log("creatorsNFT.setCreators: ", creators.address);
+
+    await creatorsPlans.setBlockFans(blockFans.address);
+    console.log("creatorsPlans.setBlockFans: ", blockFans.address);
+
+    await creatorsPlans.setCreators(creators.address);
+    console.log("creatorsPlans.setCreators: ", creators.address);
 
     // Distribuir tokens para os endereços selecionados
     const [account1, account2, account3] = await ethers.getSigners();
@@ -60,6 +72,7 @@ async function main() {
     console.log(`        const BlockfansAddress = '${blockFans.address}';`);
     console.log(`        const CreatorsAddress = '${creators.address}';`);
     console.log(`        const CreatorsNFTAddress = '${creatorsNFT.address}';`);
+    console.log(`        const CreatorsPlansAddress = '${creatorsPlans.address}';`);
     console.log("End ENV.");
 }
 

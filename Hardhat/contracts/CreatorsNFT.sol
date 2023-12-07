@@ -227,7 +227,7 @@ contract CreatorsNFT is
             price,
             units,
             mediaType,
-            NFTSource.Status.Pending
+            NFTSource.Status.Available
         );
 
         nftSources[newSourceId] = newSource;
@@ -326,7 +326,10 @@ contract CreatorsNFT is
     function buyNFT(uint256 sourceId) external override {
         NFTSource.Detail storage source = nftSources[sourceId];
 
-        require(soldUnitsPerSource[sourceId] < source.units, "Sold Out");
+        require(
+            source.units == 0 || soldUnitsPerSource[sourceId] < source.units,
+            "Sold Out"
+        );
         require(source.status == NFTSource.Status.Available, "Not Available");
 
         require(
@@ -347,7 +350,7 @@ contract CreatorsNFT is
 
         soldUnitsPerSource[sourceId]++;
 
-        if (soldUnitsPerSource[sourceId] >= source.units) {
+        if (source.units != 0 && soldUnitsPerSource[sourceId] >= source.units) {
             source.status = NFTSource.Status.SoldOut;
         }
 

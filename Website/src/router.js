@@ -2,11 +2,20 @@ import { createRouter, createWebHistory } from "vue-router";
 import { isWalletConnected } from "./store.js";
 
 import HomePage from "./views/HomePage.vue";
-import CreateNFT from "./views/CreateNFT.vue";
-import ListNFT from "./views/ListNFT.vue";
-import OwnedNFT from "./views/OwnedNFT.vue";
-import CreatorsList from "./views/CreatorsList.vue";
-import UserDetails from "./views/UserDetails.vue";
+
+// Creators
+import CreatorsList from "./views/Creators/List.vue";
+import CreatorsProfile from "./views/Creators/Profile.vue";
+
+// NFTs
+import NFTsCreate from "./views/NFTs/Create.vue";
+import MyNFTs from "./views/NFTs/MyNFTs.vue";
+import OwnedNFTs from "./views/NFTs/OwnedNFTs.vue";
+
+// Plans
+import PlansCreate from "./views/Plans/Create.vue";
+import MyPlans from "./views/Plans/MyPlans.vue";
+import PlansHistory from "./views/Plans/History.vue";
 
 const routes = [
     {
@@ -16,35 +25,8 @@ const routes = [
         meta: { title: "Welcome to BitMobster" },
     },
     {
-        path: "/create",
-        name: "Create",
-        component: CreateNFT,
-        meta: {
-            requiresWallet: true,
-            title: "Create NFT",
-        },
-    },
-    {
-        path: "/list",
-        name: "List",
-        component: ListNFT,
-        meta: {
-            requiresWallet: true,
-            title: "List NFTs",
-        },
-    },
-    {
-        path: "/owned",
-        name: "Owned",
-        component: OwnedNFT,
-        meta: {
-            requiresWallet: true,
-            title: "Owned NFTs",
-        },
-    },
-    {
         path: "/creators",
-        name: "Creators",
+        name: "CreatorsList",
         component: CreatorsList,
         meta: {
             requiresWallet: true,
@@ -53,11 +35,65 @@ const routes = [
     },
     {
         path: "/u/:username",
-        name: "UserDetails",
-        component: UserDetails,
+        name: "CreatorsProfile",
+        component: CreatorsProfile,
         meta: {
             requiresWallet: true,
             title: "User Details",
+        },
+    },
+    {
+        path: "/nfts",
+        name: "MyNFTs",
+        component: MyNFTs,
+        meta: {
+            requiresWallet: true,
+            title: "List NFTs",
+        },
+    },
+    {
+        path: "/nfts/create",
+        name: "NFTsCreate",
+        component: NFTsCreate,
+        meta: {
+            requiresWallet: true,
+            title: "Create NFT",
+        },
+    },
+    {
+        path: "/nfts/owned",
+        name: "OwnedNFTs",
+        component: OwnedNFTs,
+        meta: {
+            requiresWallet: true,
+            title: "Owned NFTs",
+        },
+    },
+    {
+        path: "/plans",
+        name: "MyPlans",
+        component: MyPlans,
+        meta: {
+            requiresWallet: true,
+            title: "Create Plans",
+        },
+    },
+    {
+        path: "/plans/create",
+        name: "PlansCreate",
+        component: PlansCreate,
+        meta: {
+            requiresWallet: true,
+            title: "Create Plans",
+        },
+    },
+    {
+        path: "/plans/history",
+        name: "PlansHistory",
+        component: PlansHistory,
+        meta: {
+            requiresWallet: true,
+            title: "Plans History",
         },
     },
 ];
@@ -76,7 +112,7 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach((to) => {
-    if (to.name === "UserDetails" && to.params.username) {
+    if (to.name === "CreatorsProfile" && to.params.username) {
         document.title = `${to.params.username} - User Details | BitMobster`;
     } else {
         document.title = to.meta.title || "BitMobster";

@@ -27,17 +27,26 @@
 
             <div class="row justify-content-between">
                 <div v-if="web3" class="secondaryMenu d-none d-md-flex">
-                    <router-link to="/create" v-if="isCreator">
-                        <button>Create</button>
-                    </router-link>
-                    <router-link to="/list" v-if="isCreator">
-                        <button>List NFTs</button>
-                    </router-link>
-                    <router-link to="/owned">
-                        <button>Owned NFTs</button>
-                    </router-link>
                     <router-link to="/creators">
                         <button>List Creators</button>
+                    </router-link>
+                    <router-link to="/nfts" v-if="isCreator">
+                        <button>My NFTs</button>
+                    </router-link>
+                    <router-link to="/nfts/create" v-if="isCreator">
+                        <button>Create NFT</button>
+                    </router-link>
+                    <router-link to="/nfts/owned">
+                        <button>Owned NFTs</button>
+                    </router-link>
+                    <router-link to="/plans">
+                        <button>My Plans</button>
+                    </router-link>
+                    <router-link to="/plans/create">
+                        <button>Create Plan</button>
+                    </router-link>
+                    <router-link to="/plans/history">
+                        <button>Plans History</button>
                     </router-link>
                 </div>
             </div>
