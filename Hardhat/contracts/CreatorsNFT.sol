@@ -235,11 +235,21 @@ contract CreatorsNFT is
         publicNFTs[msg.sender].push(newSourceId);
     }
 
-    function getNFTsByCreator() public view override returns (uint256[] memory) {
+    function getNFTsByCreator()
+        public
+        view
+        override
+        returns (uint256[] memory)
+    {
         return creatorNFTs[msg.sender];
     }
 
-    function getNFTDetailsByCreator() public view override returns (NFTSource.Detail[] memory) {
+    function getNFTDetailsByCreator()
+        public
+        view
+        override
+        returns (NFTSource.Detail[] memory)
+    {
         uint256[] memory nftIds = creatorNFTs[msg.sender];
         NFTSource.Detail[] memory nftDetails = new NFTSource.Detail[](
             nftIds.length
@@ -281,17 +291,23 @@ contract CreatorsNFT is
 
     function deleteNFTSource(uint256 sourceId) public override {
         require(nftSources[sourceId].creator == msg.sender, "Not the creator");
-        require(nftSources[sourceId].status == NFTSource.Status.Pending || nftSources[sourceId].status == NFTSource.Status.Available, "Not Available");
+        require(
+            nftSources[sourceId].status == NFTSource.Status.Pending ||
+                nftSources[sourceId].status == NFTSource.Status.Available,
+            "Not Available"
+        );
 
         nftSources[sourceId].status = NFTSource.Status.Trashed;
 
         _removeNFTSourceIdFromPublic(msg.sender, sourceId);
     }
-    
+
     function permanentDeleteNFTSource(uint256 sourceId) public override {
         require(nftSources[sourceId].creator == msg.sender, "Not the creator");
-        require(nftSources[sourceId].status == NFTSource.Status.Trashed, "Not Available");
-
+        require(
+            nftSources[sourceId].status == NFTSource.Status.Trashed,
+            "Not Available"
+        );
 
         delete nftSources[sourceId];
 

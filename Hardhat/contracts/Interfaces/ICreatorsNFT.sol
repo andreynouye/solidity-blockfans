@@ -27,11 +27,14 @@ interface ICreatorsNFT is IERC721 {
 
     function getNFTsByCreator() external view returns (uint256[] memory);
 
-    function getNFTDetailsByCreator(
-        address creator
-    ) external view returns (NFTSource.Detail[] memory);
+    function getNFTDetailsByCreator()
+        external
+        view
+        returns (NFTSource.Detail[] memory);
 
-    function getPublicNFTsByCreator() external view returns (uint256[] memory);
+    function getPublicNFTsByCreator(
+        address creator
+    ) external view returns (uint256[] memory);
 
     function getPublicNFTDetailsByCreator(
         address creator

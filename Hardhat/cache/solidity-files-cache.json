@@ -1,9 +1,9 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/contracts/Blockfans.sol": {
-      "lastModificationDate": 1701790116480,
-      "contentHash": "f733a93afef6839d13e6e07b54dfa3c0",
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Blockfans.sol": {
+      "lastModificationDate": 1701695774692,
+      "contentHash": "1791c74eb7fdfdfa088ef05cf299e78e",
       "sourceName": "contracts/Blockfans.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -52,9 +52,9 @@
         "Blockfans"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/contracts/Interfaces/IBlockfans.sol": {
-      "lastModificationDate": 1701790116481,
-      "contentHash": "aae213d0c2e33c8eb5338730118e6994",
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Interfaces\\IBlockfans.sol": {
+      "lastModificationDate": 1701695122621,
+      "contentHash": "1d1dbbaaf1671046ba408691df328c85",
       "sourceName": "contracts/Interfaces/IBlockfans.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -98,9 +98,9 @@
         "IBlockfans"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/contracts/Interfaces/ICreators.sol": {
-      "lastModificationDate": 1701878554210,
-      "contentHash": "fe94d732e7a15d550f9ba174fdbc92dd",
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Interfaces\\ICreators.sol": {
+      "lastModificationDate": 1701863353414,
+      "contentHash": "110e1c6b60b1e199c9bd25149a353743",
       "sourceName": "contracts/Interfaces/ICreators.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -142,8 +142,8 @@
         "ICreators"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1701878877318,
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\access\\Ownable.sol": {
+      "lastModificationDate": 1701911616710,
       "contentHash": "5a20b2cad87ddb61c7a3a6af21289e28",
       "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
       "solcConfig": {
@@ -188,54 +188,8 @@
         "Ownable"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
-      "lastModificationDate": 1701878877146,
-      "contentHash": "48de4c9a3a4ae5ef66a2aa620843413f",
-      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../../utils/introspection/IERC165.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC721"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
-      "lastModificationDate": 1701878876492,
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
+      "lastModificationDate": 1701911616364,
       "contentHash": "3ae5166c6827a9cf1a7a462d1632b464",
       "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
       "solcConfig": {
@@ -282,8 +236,54 @@
         "ERC20"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/utils/structs/EnumerableSet.sol": {
-      "lastModificationDate": 1701878876331,
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\IERC721.sol": {
+      "lastModificationDate": 1701911616618,
+      "contentHash": "48de4c9a3a4ae5ef66a2aa620843413f",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\utils\\structs\\EnumerableSet.sol": {
+      "lastModificationDate": 1701911616311,
       "contentHash": "e029f029abc1fd2d85d54fd69086f076",
       "sourceName": "@openzeppelin/contracts/utils/structs/EnumerableSet.sol",
       "solcConfig": {
@@ -326,8 +326,8 @@
         "EnumerableSet"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
-      "lastModificationDate": 1701878877061,
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
+      "lastModificationDate": 1701911616567,
       "contentHash": "df36f7051335cd1e748b1b6463b7fdd3",
       "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
       "solcConfig": {
@@ -370,8 +370,8 @@
         "IERC20"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/utils/Context.sol": {
-      "lastModificationDate": 1701878876172,
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
+      "lastModificationDate": 1701911616217,
       "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
@@ -414,52 +414,8 @@
         "Context"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
-      "lastModificationDate": 1701878876999,
-      "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
-      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC165"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
-      "lastModificationDate": 1701878877073,
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\IERC20Metadata.sol": {
+      "lastModificationDate": 1701911616583,
       "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
       "solcConfig": {
@@ -504,9 +460,787 @@
         "IERC20Metadata"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/contracts/CreatorsNFT.sol": {
-      "lastModificationDate": 1701892100647,
-      "contentHash": "ab2d16cf5f021aa0bca1f11b9099b9ce",
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\utils\\introspection\\IERC165.sol": {
+      "lastModificationDate": 1701911616554,
+      "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\interfaces\\IERC721.sol": {
+      "lastModificationDate": 1701911616618,
+      "contentHash": "e6da7798a8c22c5043cc42d64a2a8f80",
+      "sourceName": "@openzeppelin/contracts/interfaces/IERC721.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../token/ERC721/IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": []
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\interfaces\\IERC4906.sol": {
+      "lastModificationDate": 1701911616608,
+      "contentHash": "d3f355e15269d1476d86c84730cebb5e",
+      "sourceName": "@openzeppelin/contracts/interfaces/IERC4906.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol",
+        "./IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC4906"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\interfaces\\IERC165.sol": {
+      "lastModificationDate": 1701911616554,
+      "contentHash": "ee9624272968c23d93d4c2e39f06e6e2",
+      "sourceName": "@openzeppelin/contracts/interfaces/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": []
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\utils\\introspection\\ERC165.sol": {
+      "lastModificationDate": 1701911616350,
+      "contentHash": "0e7db055ce108f9da7bb6686a00287c0",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\ERC721.sol": {
+      "lastModificationDate": 1701911616410,
+      "contentHash": "95602b04f0b53f1139f4668d123ddeb7",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol",
+        "./IERC721Receiver.sol",
+        "./extensions/IERC721Metadata.sol",
+        "../../utils/Address.sol",
+        "../../utils/Context.sol",
+        "../../utils/Strings.sol",
+        "../../utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC721"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\utils\\Address.sol": {
+      "lastModificationDate": 1701911616185,
+      "contentHash": "211ffd288c1588ba8c10eae668ca3c66",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\utils\\Strings.sol": {
+      "lastModificationDate": 1701911616782,
+      "contentHash": "48686fc32a22a3754b8e63321857dd2a",
+      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./math/Math.sol",
+        "./math/SignedMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\IERC721Receiver.sol": {
+      "lastModificationDate": 1701911616637,
+      "contentHash": "c22d4395e33763de693fd440c6fd10e1",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Receiver"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\extensions\\IERC721Metadata.sol": {
+      "lastModificationDate": 1701911616634,
+      "contentHash": "efbc0d15b80a74e34dbe8da0f3e879bb",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Metadata"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SignedMath.sol": {
+      "lastModificationDate": 1701911616770,
+      "contentHash": "9488ebd4daacfee8ad04811600d7d061",
+      "sourceName": "@openzeppelin/contracts/utils/math/SignedMath.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SignedMath"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\utils\\math\\Math.sol": {
+      "lastModificationDate": 1701911616697,
+      "contentHash": "fe63409d8a06818b926cf89e0ea88b1b",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\extensions\\ERC721Enumerable.sol": {
+      "lastModificationDate": 1701911616427,
+      "contentHash": "212e86880d210b6cac8c3eb0cd6b1fad",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC721.sol",
+        "./IERC721Enumerable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC721Enumerable"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\extensions\\IERC721Enumerable.sol": {
+      "lastModificationDate": 1701911616618,
+      "contentHash": "f4dd06783f321aa26179bc2b6e361c29",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Enumerable"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Interfaces\\ICreatorsNFT.sol": {
+      "lastModificationDate": 1701911823012,
+      "contentHash": "e27f3adea03c4b4283cd4e9979a33bd8",
+      "sourceName": "contracts/Interfaces/ICreatorsNFT.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+        "@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+        "../Structures/NFT.sol",
+        "../Structures/NFTSource.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "ICreatorsNFT"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Structures\\NFT.sol": {
+      "lastModificationDate": 1701713612968,
+      "contentHash": "9b7b3fb73b2d7f3696f2bb4abe162c7d",
+      "sourceName": "contracts/Structures/NFT.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./NFTSource.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "NFT"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Structures\\NFTSource.sol": {
+      "lastModificationDate": 1701911525193,
+      "contentHash": "b2e5ba6ccbc9be51efa65f02a104eab4",
+      "sourceName": "contracts/Structures/NFTSource.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "peephole": true,
+              "inliner": true,
+              "jumpdestRemover": true,
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "NFTSource"
+      ]
+    },
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\CreatorsNFT.sol": {
+      "lastModificationDate": 1701911525193,
+      "contentHash": "897c345d59b5942485cf1f92d01527ef",
       "sourceName": "contracts/CreatorsNFT.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -561,58 +1295,9 @@
         "CreatorsNFT"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/contracts/Interfaces/ICreatorsNFT.sol": {
-      "lastModificationDate": 1701888926334,
-      "contentHash": "a5d923416f9223c0ea3fe38927be515c",
-      "sourceName": "contracts/Interfaces/ICreatorsNFT.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC721/IERC721.sol",
-        "@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
-        "../Structures/NFT.sol",
-        "../Structures/NFTSource.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.19"
-      ],
-      "artifacts": [
-        "ICreatorsNFT"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/contracts/Structures/Creator.sol": {
-      "lastModificationDate": 1701878554211,
-      "contentHash": "bc3774faf936bcf73f156ee91389ba54",
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Structures\\Creator.sol": {
+      "lastModificationDate": 1701862808438,
+      "contentHash": "0045e8ae076fce9ca3a477dd9795dba7",
       "sourceName": "contracts/Structures/Creator.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -654,98 +1339,8 @@
         "Creator"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/contracts/Structures/NFT.sol": {
-      "lastModificationDate": 1701790116482,
-      "contentHash": "103b90a54344179cc8a3890d8edad8fb",
-      "sourceName": "contracts/Structures/NFT.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./NFTSource.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.19"
-      ],
-      "artifacts": [
-        "NFT"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/contracts/Structures/NFTSource.sol": {
-      "lastModificationDate": 1701887081218,
-      "contentHash": "52e83ee3f53fdddf9e986365000bda75",
-      "sourceName": "contracts/Structures/NFTSource.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.19"
-      ],
-      "artifacts": [
-        "NFTSource"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1701878878565,
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\hardhat\\console.sol": {
+      "lastModificationDate": 1701911617391,
       "contentHash": "4ff3cd2f6272c9a6516e9ee4f2b967d3",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {
@@ -788,8 +1383,8 @@
         "console"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/utils/Base64.sol": {
-      "lastModificationDate": 1701878876055,
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\utils\\Base64.sol": {
+      "lastModificationDate": 1701911616185,
       "contentHash": "8f868da0a90e46a85baa348a896d1702",
       "sourceName": "@openzeppelin/contracts/utils/Base64.sol",
       "solcConfig": {
@@ -832,60 +1427,8 @@
         "Base64"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
-      "lastModificationDate": 1701878876582,
-      "contentHash": "95602b04f0b53f1139f4668d123ddeb7",
-      "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IERC721.sol",
-        "./IERC721Receiver.sol",
-        "./extensions/IERC721Metadata.sol",
-        "../../utils/Address.sol",
-        "../../utils/Context.sol",
-        "../../utils/Strings.sol",
-        "../../utils/introspection/ERC165.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "ERC721"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol": {
-      "lastModificationDate": 1701878876682,
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\extensions\\ERC721URIStorage.sol": {
+      "lastModificationDate": 1701911616445,
       "contentHash": "de368c6a87e159c86544ae5041b58cf3",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
       "solcConfig": {
@@ -931,552 +1474,9 @@
         "ERC721URIStorage"
       ]
     },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol": {
-      "lastModificationDate": 1701878876602,
-      "contentHash": "212e86880d210b6cac8c3eb0cd6b1fad",
-      "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../ERC721.sol",
-        "./IERC721Enumerable.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "ERC721Enumerable"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol": {
-      "lastModificationDate": 1701878877151,
-      "contentHash": "f4dd06783f321aa26179bc2b6e361c29",
-      "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../IERC721.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC721Enumerable"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1701878876040,
-      "contentHash": "211ffd288c1588ba8c10eae668ca3c66",
-      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.1"
-      ],
-      "artifacts": [
-        "Address"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
-      "lastModificationDate": 1701878877549,
-      "contentHash": "48686fc32a22a3754b8e63321857dd2a",
-      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./math/Math.sol",
-        "./math/SignedMath.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Strings"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
-      "lastModificationDate": 1701878876445,
-      "contentHash": "0e7db055ce108f9da7bb6686a00287c0",
-      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IERC165.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "ERC165"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
-      "lastModificationDate": 1701878877167,
-      "contentHash": "c22d4395e33763de693fd440c6fd10e1",
-      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC721Receiver"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
-      "lastModificationDate": 1701878877160,
-      "contentHash": "efbc0d15b80a74e34dbe8da0f3e879bb",
-      "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../IERC721.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC721Metadata"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol": {
-      "lastModificationDate": 1701878877538,
-      "contentHash": "9488ebd4daacfee8ad04811600d7d061",
-      "sourceName": "@openzeppelin/contracts/utils/math/SignedMath.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "SignedMath"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
-      "lastModificationDate": 1701878877302,
-      "contentHash": "fe63409d8a06818b926cf89e0ea88b1b",
-      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Math"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/interfaces/IERC4906.sol": {
-      "lastModificationDate": 1701878877128,
-      "contentHash": "d3f355e15269d1476d86c84730cebb5e",
-      "sourceName": "@openzeppelin/contracts/interfaces/IERC4906.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IERC165.sol",
-        "./IERC721.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC4906"
-      ]
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/interfaces/IERC721.sol": {
-      "lastModificationDate": 1701878877143,
-      "contentHash": "e6da7798a8c22c5043cc42d64a2a8f80",
-      "sourceName": "@openzeppelin/contracts/interfaces/IERC721.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../token/ERC721/IERC721.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": []
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/node_modules/@openzeppelin/contracts/interfaces/IERC165.sol": {
-      "lastModificationDate": 1701878876994,
-      "contentHash": "ee9624272968c23d93d4c2e39f06e6e2",
-      "sourceName": "@openzeppelin/contracts/interfaces/IERC165.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "peephole": true,
-              "inliner": true,
-              "jumpdestRemover": true,
-              "yulDetails": {
-                "optimizerSteps": "u"
-              }
-            }
-          },
-          "viaIR": true,
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../utils/introspection/IERC165.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": []
-    },
-    "/Users/andreynouye/Git/solidity-blockfans/Hardhat/contracts/Creators.sol": {
-      "lastModificationDate": 1701878554209,
-      "contentHash": "dd69af5075b87e107612e4b3ca856e4b",
+    "C:\\Users\\andre\\Git\\solidity-blockfans\\Hardhat\\contracts\\Creators.sol": {
+      "lastModificationDate": 1701863340915,
+      "contentHash": "5d2b930108757d6631f34f2352be1779",
       "sourceName": "contracts/Creators.sol",
       "solcConfig": {
         "version": "0.8.19",

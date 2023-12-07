@@ -33,8 +33,8 @@ export default {
         const created = async () => {
             try {
                 loading.value = true;
-                const results = await creatorsNFTContract.value.methods.getNFTDetailsByCreator().send({ from: account.value });
-
+                const results = await creatorsNFTContract.value.methods.getNFTDetailsByCreator().call({ from: account.value });
+                console.log("results:", results);
                 const nftsWithSales = [];
                 for (const nft of results) {
                     try {
@@ -46,7 +46,6 @@ export default {
                 }
 
                 nfts.value = nftsWithSales.sort((a, b) => b.sourceId - a.sourceId);
-
             } catch (error) {
                 console.error(error);
             } finally {
@@ -100,7 +99,7 @@ export default {
             created,
             remove,
             permanentRemove,
-            restore
+            restore,
         };
     },
 };

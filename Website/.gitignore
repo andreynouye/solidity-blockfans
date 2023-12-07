@@ -2,6 +2,7 @@
 node_modules
 /dist
 /Hardhat/artifacts/contracts/
+/Hardhat/node_modules
 /Website/public/contracts/
 
 # local env files
