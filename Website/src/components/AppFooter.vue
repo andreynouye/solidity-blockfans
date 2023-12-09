@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-auto mr-auto">
-                    <p>Keek © All Rights Reserved - 2023</p>
+                    <p>Lockeek © All Rights Reserved - 2023</p>
                 </div>
             </div>
         </div>

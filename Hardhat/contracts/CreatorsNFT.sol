@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
-import "./Interfaces/IBlockfans.sol";
+import "./Interfaces/ILockeek.sol";
 import "./Interfaces/ICreators.sol";
 import "./Interfaces/ICreatorsNFT.sol";
 import "./Structures/Creator.sol";
@@ -22,10 +22,10 @@ contract CreatorsNFT is
     Ownable,
     ICreatorsNFT
 {
-    IBlockfans private blockFansContract;
+    ILockeek private LockeekContract;
     ICreators private creatorsContract;
 
-    address payable private blockFansAddress;
+    address payable private LockeekAddress;
 
     uint256 public nextSourceId = 1;
     uint256 public nextNFTId = 1;
@@ -37,9 +37,9 @@ contract CreatorsNFT is
     mapping(uint256 => NFT.Detail) public nfts;
     mapping(uint256 => uint256) private soldUnitsPerSource;
 
-    constructor() ERC721("BlockfansNFT", "BFN") {
-        blockFansAddress = payable(address(0));
-        blockFansContract = IBlockfans(address(0));
+    constructor() ERC721("LockeekNFT", "BFN") {
+        LockeekAddress = payable(address(0));
+        LockeekContract = ILockeek(address(0));
         creatorsContract = ICreators(address(0));
     }
 
@@ -195,9 +195,9 @@ contract CreatorsNFT is
         }
     }
 
-    function setBlockFans(address blockFans) external onlyOwner {
-        blockFansAddress = payable(blockFans);
-        blockFansContract = IBlockfans(blockFans);
+    function setLockeek(address Lockeek) external onlyOwner {
+        LockeekAddress = payable(Lockeek);
+        LockeekContract = ILockeek(Lockeek);
     }
 
     function setCreators(address creatorsAddress) external onlyOwner {
@@ -333,14 +333,14 @@ contract CreatorsNFT is
         require(source.status == NFTSource.Status.Available, "Not Available");
 
         require(
-            blockFansContract.allowance(msg.sender, address(this)) >=
+            LockeekContract.allowance(msg.sender, address(this)) >=
                 source.price * 10 ** 18,
             "Allowance not set"
         );
         require(
-            blockFansContract.transferFrom(
+            LockeekContract.transferFrom(
                 msg.sender,
-                blockFansAddress,
+                LockeekAddress,
                 source.price * 10 ** 18
             ),
             "Transfer failed"

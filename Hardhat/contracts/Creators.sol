@@ -2,13 +2,13 @@
 pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "./Interfaces/IBlockfans.sol";
+import "./Interfaces/ILockeek.sol";
 import "./Interfaces/ICreators.sol";
 import "./Interfaces/ICreatorsNFT.sol";
 import "./Structures/Creator.sol";
 
 contract Creators is Ownable, ICreators {
-    IBlockfans private blockFansContract;
+    ILockeek private LockeekContract;
     ICreatorsNFT private creatorsNFTContract;
 
     address[] private creatorAddresses;
@@ -16,7 +16,7 @@ contract Creators is Ownable, ICreators {
     mapping(address => Creator.Detail) private creators;
 
     constructor() {
-        blockFansContract = IBlockfans(address(0));
+        LockeekContract = ILockeek(address(0));
         creatorsNFTContract = ICreatorsNFT(address(0));
     }
 
@@ -50,8 +50,8 @@ contract Creators is Ownable, ICreators {
         }
     }
 
-    function setBlockFans(address blockFansAddress) external onlyOwner {
-        blockFansContract = IBlockfans(blockFansAddress);
+    function setLockeek(address LockeekAddress) external onlyOwner {
+        LockeekContract = ILockeek(LockeekAddress);
     }
 
     function setCreatorsNFT(address creatorsNFTAddress) external onlyOwner {

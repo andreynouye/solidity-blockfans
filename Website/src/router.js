@@ -12,17 +12,17 @@ import NFTsCreate from "./views/NFTs/Create.vue";
 import MyNFTs from "./views/NFTs/MyNFTs.vue";
 import OwnedNFTs from "./views/NFTs/OwnedNFTs.vue";
 
-// Plans
-import PlansCreate from "./views/Plans/Create.vue";
-import MyPlans from "./views/Plans/MyPlans.vue";
-import PlansHistory from "./views/Plans/History.vue";
+// Keys
+import KeysCreate from "./views/Keys/Create.vue";
+import MyKeys from "./views/Keys/MyKeys.vue";
+import OwnedKeys from "./views/Keys/OwnedKeys.vue";
 
 const routes = [
     {
         path: "/",
         name: "HomePage",
         component: HomePage,
-        meta: { title: "Welcome to BitMobster" },
+        meta: { title: "Lockeek" },
     },
     {
         path: "/creators",
@@ -70,30 +70,30 @@ const routes = [
         },
     },
     {
-        path: "/plans",
-        name: "MyPlans",
-        component: MyPlans,
+        path: "/keys",
+        name: "MyKeys",
+        component: MyKeys,
         meta: {
             requiresWallet: true,
-            title: "Create Plans",
+            title: "List Keys",
         },
     },
     {
-        path: "/plans/create",
-        name: "PlansCreate",
-        component: PlansCreate,
+        path: "/keys/create",
+        name: "KeysCreate",
+        component: KeysCreate,
         meta: {
             requiresWallet: true,
-            title: "Create Plans",
+            title: "Create Key",
         },
     },
     {
-        path: "/plans/history",
-        name: "PlansHistory",
-        component: PlansHistory,
+        path: "/keys/owned",
+        name: "OwnedKeys",
+        component: OwnedKeys,
         meta: {
             requiresWallet: true,
-            title: "Plans History",
+            title: "Owned Keys",
         },
     },
 ];

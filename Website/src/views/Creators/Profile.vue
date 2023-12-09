@@ -13,11 +13,11 @@
                         <button v-if="nft.salesCount < nft.units || nft.units == 0" :id="'buyNFT-' + nft.sourceId" @click="buyNFT(nft.sourceId, nft.price)">Buy</button>
                     </li>
                 </ul>
-                <h2>Plans</h2>
-                <ul v-if="plans.length > 0">
-                    <li v-for="plan in plans" :key="plan.planId">
-                        NFT: {{ plan }} ID: {{ plan.planId }}
-                        <button v-if="plan.salesCount < plan.units || plan.units == 0" :id="'buyPlan-' + plan.planId" @click="buyPlan(plan.planId, plan.price)">Buy</button>
+                <h2>Keys</h2>
+                <ul v-if="keys.length > 0">
+                    <li v-for="key in keys" :key="key.keySourceId">
+                        NFT: {{ key }} ID: {{ key.keySourceId }}
+                        <button v-if="key.salesCount < key.units || key.units == 0" :id="'buyKey-' + key.keySourceId" @click="buyKey(key.keySourceId, key.price)">Buy</button>
                     </li>
                 </ul>
             </div>
@@ -39,23 +39,23 @@ export default {
         const route = useRoute();
         const username = ref(route.params.username);
 
-        const blockFansContract = inject("blockFansContract");
+        const LockeekContract = inject("LockeekContract");
         const creatorsNFTContract = inject("creatorsNFTContract");
-        const creatorsPlansContract = inject("creatorsPlansContract");
+        const creatorsKeysContract = inject("creatorsKeysContract");
 
         const nfts = ref([]);
-        const plans = ref([]);
+        const keys = ref([]);
         const loading = ref(true);
 
         console.log("username:", username);
 
         const approve = async (valueInWei, contractToApprove) => {
             try {
-                const allowance = await blockFansContract.value.methods.allowance(account.value, contractToApprove.value._address).call();
+                const allowance = await LockeekContract.value.methods.allowance(account.value, contractToApprove.value._address).call();
                 if (Web3.utils.toBN(allowance.toString()).gte(Web3.utils.toBN(valueInWei))) {
                     return true;
                 } else {
-                    await blockFansContract.value.methods.approve(contractToApprove.value._address, valueInWei).send({ from: account.value });
+                    await LockeekContract.value.methods.approve(contractToApprove.value._address, valueInWei).send({ from: account.value });
                     return true;
                 }
             } catch (err) {
@@ -80,19 +80,19 @@ export default {
             }
         };
 
-        const buyPlan = async (planId, price) => {
+        const buyKey = async (keySourceId, price) => {
             const value = price;
             const valueInWei = Web3.utils.toWei(value.toString(), "ether");
-            const isApproved = await approve(valueInWei, creatorsPlansContract);
+            const isApproved = await approve(valueInWei, creatorsKeysContract);
             if (!isApproved) return;
 
             try {
-                console.log("planId: ", planId);
-                await creatorsPlansContract.value.methods.buyPlan(planId).send({ from: account.value });
+                console.log("keySourceId: ", keySourceId);
+                await creatorsKeysContract.value.methods.buyKey(keySourceId).send({ from: account.value });
             } catch (error) {
                 console.error(error);
             } finally {
-                await createdPlans();
+                await createdKeys();
             }
         };
 
@@ -119,22 +119,22 @@ export default {
             }
         };
 
-        const createdPlans = async () => {
+        const createdKeys = async () => {
             try {
                 loading.value = true;
-                const results = await creatorsPlansContract.value.methods.getPublicPlanDetailsByCreator(username.value).call();
+                const results = await creatorsKeysContract.value.methods.getPublicKeyDetailsByCreator(username.value).call();
 
-                console.log("plan results:", results);
-                const plansWithSales = await Promise.all(
-                    results.map(async (plan) => {
-                        console.log("plan:", plan);
-                        const salesCount = await creatorsPlansContract.value.methods.getSoldUnitsPerPlan(plan.planId).call();
-                        return { ...plan, salesCount };
+                console.log("key results:", results);
+                const keysWithSales = await Promise.all(
+                    results.map(async (key) => {
+                        console.log("key:", key);
+                        const salesCount = await creatorsKeysContract.value.methods.getSoldUnitsPerSource(key.keySourceId).call();
+                        return { ...key, salesCount };
                     })
                 );
-                console.log("plansWithSales:", plansWithSales);
+                console.log("keysWithSales:", keysWithSales);
 
-                plans.value = plansWithSales;
+                keys.value = keysWithSales;
             } catch (error) {
                 console.error(error);
             } finally {
@@ -145,7 +145,7 @@ export default {
         onMounted(async () => {
             loading.value = true;
             await createdNFTs();
-            await createdPlans();
+            await createdKeys();
             loading.value = false;
         });
 
@@ -155,13 +155,13 @@ export default {
             username,
 
             nfts,
-            plans,
+            keys,
             loading,
 
             buyNFT,
-            buyPlan,
+            buyKey,
             createdNFTs,
-            createdPlans,
+            createdKeys,
         };
     },
 };

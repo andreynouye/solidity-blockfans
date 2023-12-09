@@ -5,7 +5,7 @@
                 <div class="col-auto mr-auto">
                     <div class="logo">
                         <router-link to="/">
-                            <h1 class="appName">Keek</h1>
+                            <h1 class="appName">Lockeek</h1>
                         </router-link>
                     </div>
                 </div>
@@ -39,14 +39,14 @@
                     <router-link to="/nfts/owned">
                         <button>Owned NFTs</button>
                     </router-link>
-                    <router-link to="/plans">
-                        <button>My Plans</button>
+                    <router-link to="/keys" v-if="isCreator">
+                        <button>My Keys</button>
                     </router-link>
-                    <router-link to="/plans/create">
-                        <button>Create Plan</button>
+                    <router-link to="/keys/create" v-if="isCreator">
+                        <button>Create Key</button>
                     </router-link>
-                    <router-link to="/plans/history">
-                        <button>Plans History</button>
+                    <router-link to="/keys/owned">
+                        <button>Owned Keys</button>
                     </router-link>
                 </div>
             </div>

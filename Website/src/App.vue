@@ -19,25 +19,25 @@ export default {
         AppFooter,
     },
     setup() {
-        const BlockfansAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+        const LockeekAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
         const CreatorsAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
         const CreatorsNFTAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
-        const CreatorsPlansAddress = "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9";
+        const CreatorsKeysAddress = "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9";
 
         const web3 = ref(null);
-        const blockFansContract = ref(null);
+        const LockeekContract = ref(null);
         const creatorsContract = ref(null);
         const creatorsNFTContract = ref(null);
-        const creatorsPlansContract = ref(null);
+        const creatorsKeysContract = ref(null);
         const footer = ref(null);
 
         const isCreator = ref(false);
 
         const loadContracts = async () => {
             try {
-                const responseBlockfans = await fetch("/contracts/Blockfans.sol/Blockfans.json");
-                const contractBlockfans = await responseBlockfans.json();
-                const BlockfansABI = contractBlockfans.abi;
+                const responseLockeek = await fetch("/contracts/Lockeek.sol/Lockeek.json");
+                const contractLockeek = await responseLockeek.json();
+                const LockeekABI = contractLockeek.abi;
 
                 const responseCreators = await fetch("/contracts/Creators.sol/Creators.json");
                 const contractCreators = await responseCreators.json();
@@ -47,14 +47,14 @@ export default {
                 const contractCreatorsNFT = await responseCreatorsNFT.json();
                 const CreatorsNFTABI = contractCreatorsNFT.abi;
 
-                const responseCreatorsPlans = await fetch("/contracts/CreatorsPlans.sol/CreatorsPlans.json");
-                const contractCreatorsPlans = await responseCreatorsPlans.json();
-                const CreatorsPlansABI = contractCreatorsPlans.abi;
+                const responseCreatorsKeys = await fetch("/contracts/CreatorsKeys.sol/CreatorsKeys.json");
+                const contractCreatorsKeys = await responseCreatorsKeys.json();
+                const CreatorsKeysABI = contractCreatorsKeys.abi;
 
-                blockFansContract.value = new web3.value.eth.Contract(BlockfansABI, BlockfansAddress);
+                LockeekContract.value = new web3.value.eth.Contract(LockeekABI, LockeekAddress);
                 creatorsContract.value = new web3.value.eth.Contract(CreatorsABI, CreatorsAddress);
                 creatorsNFTContract.value = new web3.value.eth.Contract(CreatorsNFTABI, CreatorsNFTAddress);
-                creatorsPlansContract.value = new web3.value.eth.Contract(CreatorsPlansABI, CreatorsPlansAddress);
+                creatorsKeysContract.value = new web3.value.eth.Contract(CreatorsKeysABI, CreatorsKeysAddress);
             } catch (error) {
                 console.error(error);
             }
@@ -85,10 +85,10 @@ export default {
             web3.value = null;
             account.value = null;
 
-            blockFansContract.value = null;
+            LockeekContract.value = null;
             creatorsContract.value = null;
             creatorsNFTContract.value = null;
-            creatorsPlansContract.value = null;
+            creatorsKeysContract.value = null;
 
             router.push("/");
         };
@@ -100,20 +100,20 @@ export default {
         provide("connectWallet", connectWallet);
         provide("disconnectWallet", disconnectWallet);
 
-        provide("blockFansContract", blockFansContract);
+        provide("LockeekContract", LockeekContract);
         provide("creatorsContract", creatorsContract);
         provide("creatorsNFTContract", creatorsNFTContract);
-        provide("creatorsPlansContract", creatorsPlansContract);
+        provide("creatorsKeysContract", creatorsKeysContract);
 
         return {
             web3,
             account,
             footer,
 
-            blockFansContract,
+            LockeekContract,
             creatorsContract,
             creatorsNFTContract,
-            creatorsPlansContract,
+            creatorsKeysContract,
 
             isCreator,
 
